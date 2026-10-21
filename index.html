@@ -230,7 +230,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2.5rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -491,6 +491,131 @@
     font-weight: 600;
   }
 
+  #convenios {
+      max-width: none;
+      padding: 5rem 0;
+    }
+
+    .convenios-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 8%;
+    }
+
+    .marquee {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(90deg, #0f0f14, #1a0f16, #0f0f14);
+      border-top: 2px solid var(--accent-pink);
+      border-bottom: 2px solid var(--accent-pink);
+      box-shadow: 0 0 30px rgba(254, 84, 157, 0.2);
+      padding: 1.3rem 0;
+      margin-bottom: 1rem;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 28s linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-group {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .marquee-item {
+      font-size: 2.2rem;
+      font-weight: 900;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--silver-gray);
+      white-space: nowrap;
+      padding: 0 1.8rem;
+    }
+
+    .marquee-item.pink {
+      color: var(--accent-pink);
+    }
+
+    .marquee-item small {
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-left: 0.6rem;
+    }
+
+    .marquee-sep {
+      color: var(--accent-pink);
+      font-size: 1.6rem;
+      padding: 0 0.4rem;
+    }
+
+
+  /* === LOGOS DE LOS CLUBES CON CONVENIO === */
+  .marquee-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.5rem;
+  }
+
+  .marquee-logo {
+    height: 90px;
+    width: 135px;
+    object-fit: contain;
+    display: block;
+    padding: 0 0.8rem;
+    transition: transform 0.3s ease;
+  }
+
+  .marquee-logo:hover {
+    transform: scale(1.08);
+  }
+
+  @media (max-width: 768px) {
+    .marquee-logo {
+      height: 65px;
+      width: 100px;
+      padding: 0 0.5rem;
+    }
+  }
+
+
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .convenios-sub {
+      text-align: center;
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
+    }
+
+    .convenios-sub strong {
+      color: var(--accent-pink-light);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+    }
+
+    @media (max-width: 768px) {
+      .marquee-item { font-size: 1.5rem; padding: 0 1rem; }
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .form-wrapper { padding: 2rem 1.5rem; }
@@ -508,6 +633,7 @@
       <ul class="nav-links">
         <li><a href="#inicio" class="active">Inicio</a></li>
         <li><a href="#nosotros">Conocé Obercamp</a></li>
+        <li><a href="#convenios">Convenios</a></li>
         <li><a href="#planes">Nuestros Planes</a></li>
         <li><a href="#registro">Registro de Jugador</a></li>
       </ul>
@@ -544,6 +670,94 @@
     </div>
   </section>
 
+    <!-- SECCIÓN: CONVENIOS -->
+  <section id="convenios">
+    
+<div class="marquee" role="region" aria-label="Clubes con convenio">
+  <div class="marquee-track">
+
+    <!-- Primer grupo -->
+    <div class="marquee-group">
+      <span class="marquee-item">CONVENIOS</span>
+      <span class="marquee-sep">✦</span>
+
+      <img
+        src="logo1.png"
+        alt="Club Almirante Brown"
+        class="marquee-logo"
+      >
+
+      <span class="marquee-sep">✦</span>
+
+      <img
+        src="logo2.png"
+        alt="Club Atlético Atlas"
+        class="marquee-logo"
+      >
+
+      <span class="marquee-sep">✦</span>
+    </div>
+
+    <div class="marquee-group" aria-hidden="true">
+      <span class="marquee-item">CONVENIOS</span>
+      <span class="marquee-sep">✦</span>
+
+      <img
+        src="logo1.png"
+        alt=""
+        class="marquee-logo"
+      >
+
+      <span class="marquee-sep">✦</span>
+
+      <img
+        src="logo2.png"
+        alt=""
+        class="marquee-logo"
+      >
+
+      <span class="marquee-sep">✦</span>
+    </div>
+
+    <div class="marquee-group" aria-hidden="true">
+      <span class="marquee-item">CONVENIOS</span>
+      <span class="marquee-sep">✦</span>
+
+      <img
+        src="logo1.png"
+        alt=""
+        class="marquee-logo"
+      >
+
+      <span class="marquee-sep">✦</span>
+
+      <img
+        src="logo2.png"
+        alt=""
+        class="marquee-logo"
+      >
+
+      <span class="marquee-sep">✦</span>
+    </div>
+
+  </div>
+  
+</div>
+
+
+    <div class="convenios-inner">
+     <!-- <p class="convenios-sub">Entrená con nosotros y te ayudamos a dar el <strong>siguiente paso</strong>.</p>-->
+
+      <div class="grid-info">
+        <div class="info-card">
+          <h3>CONVENIO DEPORTIVO</h3>
+          
+          <p class="card-text">Convenio con <strong>Club Atlas</strong> y <strong>Almirante Brown</strong>, te brindamos la posibilidad de jugar directamente en cada institución.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECCIÓN: NUESTROS PLANES -->
   <section id="planes">
     <h2 class="section-title">NUESTROS <span>PLANES</span></h2>
@@ -555,6 +769,14 @@
           <p class="card-text">Para jugadores que actualmente estén en un club y quieran mejorar sus habilidades dentro de la cancha con estadísticas de mediciones y mejoras.</p>
         </div>
         <button class="btn-plan-details" onclick="openModal('inferiores')">Ver Detalles y Días</button>
+      </div>
+
+      <div class="plan-card">
+        <div>
+          <h3 class="plan-title">Plan Femenino</h3>
+          <p class="card-text">Para jugadoras con o sin club que busquen mejorar sus habilidades técnicas dentro de la cancha. Además posee salida a club oficial</p>
+        </div>
+        <button class="btn-plan-details" onclick="openModal('femenino')">Ver Detalles y Días</button>
       </div>
 
       <div class="plan-card highlight">
@@ -587,6 +809,11 @@
         <div class="modal-info-label">💰 Precio Mensual</div>
         <div class="modal-info-value" id="modalPrecio">-</div>
       </div>
+
+      <!--<div class="modal-info-item">
+        <div class="modal-info-label">💰 <strong>Precio Lanzamiento</strong></div>
+        <div class="modal-info-value" id="modalPrecioLanzamiento">-</div>
+      </div>-->
 
       <a href="#registro" class="btn-primary" style="display: block; text-align: center; margin-top: 1.5rem;" onclick="closeModal()">Registrarme en este Plan</a>
     </div>
@@ -659,10 +886,11 @@
       </div>
 
       <div class="footer-col">
-        <h4>Navegación</h4>
+        <!--<h4>Navegación</h4>-->
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Conoce Obercamp</a></li>
+          <li><a href="#convenios">Convenios</a></li>
           <li><a href="#planes">Nuestros Planes</a></li>
           <li><a href="#registro">Registro de Jugador</a></li>
         </ul>
@@ -686,12 +914,20 @@
       inferiores: {
         titulo: "Plan Inferiores",
         dias: "Jueves - 17:00 hs a 19:00 hs",
-        precio: "$39.999"
+        precio: "$39.999",
+        //precioLanzamiento: "$35.000"
+      },
+      femenino: {
+        titulo: "Plan Femenino",
+        dias: "Miércoles - 17:00 hs a 19:00 hs",
+        precio: "$39.999",
+        //precioLanzamiento: "$35.000"
       },
       libre: {
         titulo: "Plan Libre",
         dias: "Jueves - 17:00 hs a 19:00 hs",
-        precio: "$39.999"
+        precio: "$39.999",
+        //precioLanzamiento: "$35.000"
       }
     };
 
@@ -704,6 +940,7 @@
         document.getElementById('modalPlanTitle').innerText = info.titulo;
         document.getElementById('modalDias').innerText = info.dias;
         document.getElementById('modalPrecio').innerText = info.precio;
+        //document.getElementById('modalPrecioLanzamiento').innerText = info.precioLanzamiento;
         modal.style.display = 'flex';
       }
     }
